@@ -49,6 +49,7 @@ stdenvNoCC.mkDerivation {
     license = lib.licenses.asl20;
 
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    mainProgram = "./clockify-cli";
 
     platforms = [
       "aarch64-darwin"

@@ -47,6 +47,7 @@ stdenvNoCC.mkDerivation {
     description = "A simple cli to manage your time entries on Clockify from terminal";
     homepage = "https://clockify-cli.netlify.app/";
     license = lib.licenses.asl20;
+    mainProgram = "clockify-cli";
 
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
 

@@ -9,24 +9,24 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    i686-linux = "1wbz3qk2jpyizn4198g07lkrd7vhsgxq23ifnm0ndyh4lb3gjgc2";
-    x86_64-linux = "0fyw6bazq09zxycpyg1rhh3n4pc5fn34nzhsxr3ixh1lmq2cwgg0";
-    aarch64-linux = "11b55ifghwp0xlpy2h84l3zblcbqjx58ij4bi963aq3bym81xqgg";
-    x86_64-darwin = "1ggk2444zz5m0xxijqzlm9s31000harq89sa5qvavd8hi4vdi85f";
-    aarch64-darwin = "0qfq2mnxbvfl5ihil3yjnw7fh4g5sfm5iiqv0dp1fql9pnlif19r";
+    i686-linux = "0kwyl7dbkniqvjhpill08sic2yfkzmvw1960qp35r3w5va4rmadj";
+    x86_64-linux = "144f7xij16adlcz6xdavvp0jx7d1z7f685gyha5aygawlb3l9a1p";
+    aarch64-linux = "0m1pbwb5hdvh5myh9zm1759k5czvj7qxvmiz3ihnnxgyl2wx10jv";
+    x86_64-darwin = "1krklwfyn436m619sj0jkspa3q4zln27nj35ayg5xzaf035i3b7p";
+    aarch64-darwin = "12rad4y8aada23027cks36giib37j11lw3z0apsmi7javmngcsak";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.0/clockify-cli_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.0/clockify-cli_Linux_x86_64.tar.gz";
-    aarch64-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.0/clockify-cli_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.0/clockify-cli_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.0/clockify-cli_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.1/clockify-cli_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.1/clockify-cli_Linux_x86_64.tar.gz";
+    aarch64-linux = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.1/clockify-cli_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.1/clockify-cli_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/lucassabreu/clockify-cli/releases/download/v0.56.1/clockify-cli_Darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "clockify-cli";
-  version = "0.56.0";
+  version = "0.56.1";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -46,6 +46,7 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "A simple cli to manage your time entries on Clockify from terminal";
     homepage = "https://clockify-cli.netlify.app/";
+    license = lib.licenses.asl20;
 
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
 
